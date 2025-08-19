@@ -1,0 +1,24 @@
+1. Instalamos el servicio:
+
+sudo apt install msmtp msmtp-mta -y
+
+2. Editamos el archivo ~/.msmtprc :
+
+defaults
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.msmtp.log
+
+account        gmail
+host           smtp.gmail.com
+port           587
+from           tu_usuario@gmail.com
+user           tu_usuario@gmail.com
+password       TU_CONTRASEÑA_O_APP_PASSWORD
+
+account default : gmail
+
+3. Le damos permisos:
+chmod 600 ~/.msmtprc
+
